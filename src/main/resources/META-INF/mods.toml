@@ -12,11 +12,11 @@ issueTrackerURL="http://my.issue.tracker/" #optional
 # A list of mods - how many allowed here is determined by the individual mod loader
 [[mods]] #mandatory
 # The modid of the mod
-modId="vagrantaerospace" #mandatory
+modId="aerocraftmod" #mandatory
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
 version="${version}" #mandatory
  # A display name for the mod
-displayName="Vagrant Aerospace" #mandatory
+displayName="AeroCraft Mod" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification <here>
 updateJSONURL="http://myurl.me/" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
@@ -32,7 +32,7 @@ description='''
 Testing a description.
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.vagrantaerospace]] #optional
+[[dependencies.aerocraftmod]] #optional
     # the modid of the dependency
     modId="forge" #mandatory
     # Does this dependency have to exist - if not, ordering below must be specified
@@ -44,7 +44,7 @@ Testing a description.
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
     side="BOTH"
 # Here's another dependency
-[[dependencies.vagrantaerospace]]
+[[dependencies.aerocraftmod]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.15.2]"

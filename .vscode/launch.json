@@ -11,7 +11,7 @@
       "vmArgs": "-Dforge.logging.console.level\u003ddebug -Dforge.logging.markers\u003dSCAN,REGISTRIES,REGISTRYDUMP",
       "args": "",
       "env": {
-        "MOD_CLASSES": "vagrantaerospace%%${workspaceFolder}/bin/main:vagrantaerospace%%${workspaceFolder}/bin/main",
+        "MOD_CLASSES": "aerocraftmod%%${workspaceFolder}/bin/main:aerocraftmod%%${workspaceFolder}/bin/main",
         "MCP_MAPPINGS": "snapshot_20190719-1.14.3",
         "MCP_VERSION": "20200122.131323",
         "FORGE_VERSION": "31.1.10",
@@ -31,9 +31,9 @@
       "projectName": "aerocraft",
       "cwd": "${workspaceFolder}/run",
       "vmArgs": "-Dforge.logging.console.level\u003ddebug -Dforge.logging.markers\u003dSCAN,REGISTRIES,REGISTRYDUMP",
-      "args": "--mod vagrantaerospace --all --output /home/isaac/Source/aerocraft/src/generated/resources",
+      "args": "--mod aerocraftmod --all --output /home/isaac/Source/aerocraft/src/generated/resources",
       "env": {
-        "MOD_CLASSES": "vagrantaerospace%%${workspaceFolder}/bin/main:vagrantaerospace%%${workspaceFolder}/bin/main",
+        "MOD_CLASSES": "aerocraftmod%%${workspaceFolder}/bin/main:aerocraftmod%%${workspaceFolder}/bin/main",
         "MCP_MAPPINGS": "snapshot_20190719-1.14.3",
         "MCP_VERSION": "20200122.131323",
         "FORGE_VERSION": "31.1.10",
@@ -52,7 +52,7 @@
       "vmArgs": "-Dforge.logging.console.level\u003ddebug -Dforge.logging.markers\u003dSCAN,REGISTRIES,REGISTRYDUMP",
       "args": "",
       "env": {
-        "MOD_CLASSES": "vagrantaerospace%%${workspaceFolder}/bin/main:vagrantaerospace%%${workspaceFolder}/bin/main",
+        "MOD_CLASSES": "aerocraftmod%%${workspaceFolder}/bin/main:aerocraftmod%%${workspaceFolder}/bin/main",
         "MCP_MAPPINGS": "snapshot_20190719-1.14.3",
         "MCP_VERSION": "20200122.131323",
         "FORGE_VERSION": "31.1.10",

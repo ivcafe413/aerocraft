@@ -1,11 +1,11 @@
-package technology.vagrant.vagrantaerospace.init;
+package technology.vagrant.aerocraftmod.init;
 
 import net.minecraft.item.Item;
 import net.minecraftforge.registries.ObjectHolder;
 
-import technology.vagrant.vagrantaerospace.VagrantAerospace;
+import technology.vagrant.aerocraftmod.AeroCraftMod;
 
-@ObjectHolder(VagrantAerospace.MODID)
+@ObjectHolder(AeroCraftMod.MODID)
 public class ModItems {
     public static final Item FUSELAGE = null;
 }
