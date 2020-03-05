@@ -1,10 +1,10 @@
 package technology.vagrant.aerocraftmod.tileentities;
 
 import net.minecraft.tileentity.TileEntity;
-import technology.vagrant.aerocraftmod.init.ModEntityTypes;
+import technology.vagrant.aerocraftmod.init.ModTileEntityTypes;
 
 public class WorkbenchTileEntity extends TileEntity {
     public WorkbenchTileEntity() {
-        super(ModEntityTypes.WORKBENCHTILE);
+        super(ModTileEntityTypes.WORKBENCHTILE);
     }
 }

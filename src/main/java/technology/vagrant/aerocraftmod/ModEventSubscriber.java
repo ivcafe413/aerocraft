@@ -6,6 +6,7 @@ import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.registries.IForgeRegistryEntry;
@@ -28,7 +29,7 @@ public class ModEventSubscriber {
                 setup(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F)),
                         "aluminum_ore"),
                 setup(new WorkbenchBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.5F)),
-                        "workbench"));
+                        "workbenchblock"));
     }
 
     @SubscribeEvent

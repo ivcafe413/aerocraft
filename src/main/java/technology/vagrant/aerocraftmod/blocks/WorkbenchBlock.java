@@ -4,7 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.IBlockReader;
-import technology.vagrant.aerocraftmod.init.ModEntityTypes;
+import technology.vagrant.aerocraftmod.init.ModTileEntityTypes;
 
 public class WorkbenchBlock extends HorizontalBlock {
     public WorkbenchBlock(final Properties properties) {
@@ -18,6 +18,6 @@ public class WorkbenchBlock extends HorizontalBlock {
 
     @Override
     public TileEntity createTileEntity(final BlockState state, final IBlockReader world) {
-        return ModEntityTypes.WORKBENCHTILE.create();
+        return ModTileEntityTypes.WORKBENCHTILE.create();
     }
 }

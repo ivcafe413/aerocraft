@@ -3,8 +3,9 @@ package technology.vagrant.aerocraftmod.init;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.registries.ObjectHolder;
 import technology.vagrant.aerocraftmod.AeroCraftMod;
+import technology.vagrant.aerocraftmod.tileentities.WorkbenchTileEntity;
 
 @ObjectHolder(AeroCraftMod.MODID)
-public class ModEntityTypes {
-    public static final TileEntityType<?> WORKBENCHTILE = null;
+public class ModTileEntityTypes {
+    public static final TileEntityType<WorkbenchTileEntity> WORKBENCHTILE = null;
 }
