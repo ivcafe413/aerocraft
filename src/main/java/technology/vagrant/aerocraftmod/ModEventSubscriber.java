@@ -2,11 +2,13 @@ package technology.vagrant.aerocraftmod;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.inventory.container.ContainerType;
+import net.minecraft.inventory.container.WorkbenchContainer;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.registries.IForgeRegistryEntry;
@@ -38,6 +40,17 @@ public class ModEventSubscriber {
                 .registerAll(setup(
                         TileEntityType.Builder.create(WorkbenchTileEntity::new, ModBlocks.WORKBENCHBLOCK).build(null),
                         "workbenchtile"));
+    }
+
+    @SubscribeEvent
+    public static void onRegisterContainerTypes(RegistryEvent.Register<ContainerType<?>> event) {
+        event.getRegistry().registerAll(
+                // setup(IForgeContainerType.create(WorkbenchContainer::new),
+                // "workbenchcontainer")
+                //I guess as a result of changes to the IFactory something?
+                setup(IForgeContainerType.create((windowIn, inventory, data) -> {
+                    return new WorkbenchContainer(windowIn, inventory);
+                }), "workbenchcontainer"));
     }
 
     public static <T extends IForgeRegistryEntry<T>> T setup(final T entry, final String name) {
