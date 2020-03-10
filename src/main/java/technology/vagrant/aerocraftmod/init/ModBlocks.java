@@ -6,5 +6,5 @@ import technology.vagrant.aerocraftmod.AeroCraftMod;
 
 @ObjectHolder(AeroCraftMod.MODID)
 public class ModBlocks {
-    public static final Block WORKBENCHBLOCK = null;
+    public static final Block AIRFOILWORKBENCHBLOCK = null;
 }
