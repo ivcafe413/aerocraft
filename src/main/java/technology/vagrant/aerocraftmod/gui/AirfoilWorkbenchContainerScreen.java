@@ -22,6 +22,7 @@ public class AirfoilWorkbenchContainerScreen extends ContainerScreen<AirfoilWork
         int y = this.guiTop;
 
         // Screen#blit(x, y, u, v, w, h)
+        // Assumes size of 176/166 (inherited from ContainerScreen) if not given
         this.blit(x, y, 0, 0, this.xSize, this.ySize);
 
         // No tile entity
@@ -32,8 +33,8 @@ public class AirfoilWorkbenchContainerScreen extends ContainerScreen<AirfoilWork
         super.drawGuiContainerForegroundLayer(mouseX, mouseY);
 
         // Copied from AbstractFurnaceScreen#drawGuiContainerForegroundLayer
-        String s = this.title.getFormattedText();
-        this.font.drawString(s, (float) (this.xSize / 2 - this.font.getStringWidth(s) / 2), 6.0F, 0x404040);
+        //String s = this.title.getFormattedText();
+        //this.font.drawString(s, (float) (this.xSize / 2 - this.font.getStringWidth(s) / 2), 6.0F, 0x404040);
     }
 
     @Override

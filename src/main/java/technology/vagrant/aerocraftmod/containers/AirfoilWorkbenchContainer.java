@@ -20,28 +20,28 @@ public class AirfoilWorkbenchContainer extends Container {
 
     public AirfoilWorkbenchContainer(int windowId, PlayerInventory inventory, PacketBuffer extraData) {
         super(ModContainerTypes.AIRFOILWORKBENCHCONTAINER, windowId);
-        this.craftMatrix = new CraftingInventory(this, 4, 3);
+        this.craftMatrix = new CraftingInventory(this, 5, 4);
         this.craftResult = new CraftResultInventory();
 
-        //4x3 Craft Matrix
-        for (int row = 0; row < 3; row++) {
-            for(int col = 0; col < 4; col++) {
-                this.addSlot(new Slot(this.craftMatrix, col + (row * 4), 27 + (col * 18), 6 + (row * 18)));
+        //5x4 Craft Matrix
+        for (int row = 0; row < 4; row++) {
+            for(int col = 0; col < 5; col++) {
+                this.addSlot(new Slot(this.craftMatrix, col + (row * 5), 15 + (col * 18), 8 + (row * 18)));
             }
         }
 
         //Result Slot
-        this.addSlot(new CraftingResultSlot(inventory.player, this.craftMatrix, this.craftResult, 0, 117, 24));
+        this.addSlot(new CraftingResultSlot(inventory.player, this.craftMatrix, this.craftResult, 0, 116, 35));
 
         //Player Inventory
         //Hotbar
         for (int col = 0; col < 9; col++) {
-            this.addSlot(new Slot(inventory, col, 9 + (col * 18), 128));
+            this.addSlot(new Slot(inventory, col, 8 + (col * 18), 142));
         }
         //Main Inventory
         for(int row = 0; row < 3; row++) {
             for(int col = 0; col < 9; col++) {
-                this.addSlot(new Slot(inventory, col + (row * 9) + 9, 9 + (col * 18), 70 + (row * 18)));
+                this.addSlot(new Slot(inventory, col + (row * 9) + 9, 8 + (col * 18), 84 + (row * 18)));
             }
         }
     }
