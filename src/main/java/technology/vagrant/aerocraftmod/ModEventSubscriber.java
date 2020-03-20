@@ -16,6 +16,7 @@ import technology.vagrant.aerocraftmod.blocks.AirfoilWorkbenchBlock;
 import technology.vagrant.aerocraftmod.containers.AirfoilWorkbenchContainer;
 import technology.vagrant.aerocraftmod.init.ModBlocks;
 import technology.vagrant.aerocraftmod.init.ModItemGroups;
+import technology.vagrant.aerocraftmod.items.WideBlockItem;
 
 @EventBusSubscriber(modid = AeroCraftMod.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class ModEventSubscriber {
@@ -33,7 +34,7 @@ public class ModEventSubscriber {
         event.getRegistry()
                 .registerAll(
                     setup(new Item(new Item.Properties().group(ModItemGroups.MOD_ITEM_GROUP)), "fuselage"),
-                    setup(new BlockItem(ModBlocks.AIRFOILWORKBENCHBLOCK, new Item.Properties().group(ModItemGroups.MOD_ITEM_GROUP)), "airfoilworkbench"));
+                    setup(new WideBlockItem(ModBlocks.AIRFOILWORKBENCHBLOCK, new Item.Properties().group(ModItemGroups.MOD_ITEM_GROUP)), "airfoilworkbench"));
     }
 
     @SubscribeEvent

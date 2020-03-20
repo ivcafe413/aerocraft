@@ -3,7 +3,7 @@ build
 .gradle
 
 # other
-eclipse
+.vscode
 run
 
 saves

@@ -9,5 +9,5 @@ import net.minecraftforge.fml.common.Mod;
 public class AeroCraftMod {
     public static final String MODID = "aerocraftmod";
 
-    private static final Logger LOGGER = LogManager.getLogger(MODID);
+    //private static final Logger LOGGER = LogManager.getLogger(MODID);
 }
