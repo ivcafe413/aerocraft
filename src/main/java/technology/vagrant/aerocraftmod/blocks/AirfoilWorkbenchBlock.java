@@ -24,7 +24,7 @@ import net.minecraftforge.fml.network.NetworkHooks;
 import technology.vagrant.aerocraftmod.AeroCraftMod;
 import technology.vagrant.aerocraftmod.containers.AirfoilWorkbenchContainer;
 
-public class AirfoilWorkbenchBlock extends HorizontalBlock {
+public class AirfoilWorkbenchBlock extends WideBlock {
     private static final ITextComponent title = new TranslationTextComponent("container.airfoilworkbench");
     // private static final Logger LOGGER = LogManager.getLogManager().getLogger(AeroCraftMod.MODID);
     
