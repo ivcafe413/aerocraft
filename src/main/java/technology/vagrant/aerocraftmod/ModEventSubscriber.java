@@ -23,8 +23,8 @@ public class ModEventSubscriber {
     @SubscribeEvent
     public static void onRegisterBlocks(RegistryEvent.Register<Block> event) {
         event.getRegistry().registerAll(
-                setup(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F)),
-                        "aluminum_ore"),
+                // setup(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F)),
+                //         "aluminum_ore"),
                 setup(new AirfoilWorkbenchBlock(Block.Properties.create(Material.IRON).hardnessAndResistance(2.5F)),
                         "airfoilworkbenchblock"));
     }
@@ -33,7 +33,7 @@ public class ModEventSubscriber {
     public static void onRegisterItems(RegistryEvent.Register<Item> event) {
         event.getRegistry()
                 .registerAll(
-                    setup(new Item(new Item.Properties().group(ModItemGroups.MOD_ITEM_GROUP)), "fuselage"),
+                    //setup(new Item(new Item.Properties().group(ModItemGroups.MOD_ITEM_GROUP)), "fuselage"),
                     setup(new WideBlockItem(ModBlocks.AIRFOILWORKBENCHBLOCK, new Item.Properties().group(ModItemGroups.MOD_ITEM_GROUP)), "airfoilworkbench"));
     }
 

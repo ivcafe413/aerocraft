@@ -1,22 +1,22 @@
 package technology.vagrant.aerocraftmod.items;
 
-import java.util.logging.Level;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
-
 import javax.annotation.Nullable;
 
 import org.apache.commons.lang3.NotImplementedException;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.HorizontalBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.util.ActionResultType;
 import technology.vagrant.aerocraftmod.AeroCraftMod;
 
 public class WideBlockItem extends BlockItem {
-    private static final Logger LOGGER = LogManager.getLogManager().getLogger(AeroCraftMod.MODID);
+    private static final Logger LOGGER = LogManager.getLogger(AeroCraftMod.MODID);
 
     public WideBlockItem(Block blockIn, Properties builder) {
         super(blockIn, builder);
@@ -26,9 +26,6 @@ public class WideBlockItem extends BlockItem {
     public ActionResultType tryPlace(@Nullable BlockItemUseContext context) {
         //Overriding BlockItem#tryPlace(BlockItemUseContext context)
         //to account for any generic 2-wide block
-        //return super.tryPlace(context);
-
-        //Reducing if-else nesting
 
         //BlockItemUseContext blockItemUseContext = this.getBlockItemUseContext(context);
         //I don't think the previous line is necessary, looking at how BlockItem#getBlockItemUseContext is implemented
@@ -38,23 +35,25 @@ public class WideBlockItem extends BlockItem {
         }
 
         if(!context.canPlace()) {
-            //If the block at targeted blockitem use can be replaced with new block
-            //(ex: AIR)
+            //If the block at targeted blockitem use can be replaced with new block (i.e. AIR)
             return ActionResultType.FAIL;
         }
 
+        //Should be default states
         BlockState blockState = this.getStateForPlacement(context);
-        if(blockState == null) {
-            return ActionResultType.FAIL;
-        }
 
-        //Divergent from BlockItem#tryPlace
         //if (!this.placeBlock(blockitemusecontext, blockstate))
-        //Need to start a check if BOTH blocks can be place
-        //Also, this could be the SECOND block (i.e. right-side)
-        //This will require split logic for each scenario
+        //Need to start a check if BOTH blocks can be placed
+        //Since this is item placement I just have to check for adjacency
+        blockState = blockState.with(HorizontalBlock.HORIZONTAL_FACING, context.getPlacementHorizontalFacing().getOpposite());
+        LOGGER.debug("context placement state facing:{}", blockState.get(HorizontalBlock.HORIZONTAL_FACING));
+        //Facing south, check east-west
+        //Facing north, check west-east
+        //Facing east, check north-south
+        //Facing west, check south-north
 
-        //Can I store the left-side/right-side problem with BlockState?
+        //Let's only check left and right for a sideways placement
+        //adjBlockLeft = context.getWorld().getBlockState(context.getPos().)
         
         throw new NotImplementedException("");
     }
