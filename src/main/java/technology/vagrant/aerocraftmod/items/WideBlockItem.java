@@ -3,7 +3,6 @@ package technology.vagrant.aerocraftmod.items;
 import javax.annotation.Nullable;
 
 import org.apache.commons.lang3.NotImplementedException;
-import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

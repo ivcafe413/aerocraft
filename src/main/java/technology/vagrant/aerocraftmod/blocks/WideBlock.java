@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.state.StateContainer;
+import net.minecraft.util.Direction;
 import net.minecraft.util.IStringSerializable;
 
 public abstract class WideBlock extends HorizontalBlock {
@@ -12,11 +13,13 @@ public abstract class WideBlock extends HorizontalBlock {
 
     public WideBlock(final Block.Properties properties) {
         super(properties);
+        this.setDefaultState(this.stateContainer.getBaseState().with(HORIZONTAL_FACING, Direction.NORTH));
     }
 
     @Override
 	protected void fillStateContainer(final StateContainer.Builder<Block, BlockState> builder) {
-		super.fillStateContainer(builder);
+        super.fillStateContainer(builder);
+        builder.add(HORIZONTAL_FACING);
 		builder.add(SIDE);
 	}
 

@@ -26,16 +26,14 @@ public class AirfoilWorkbenchBlock extends WideBlock {
     // private static final Logger LOGGER =
     // LogManager.getLogManager().getLogger(AeroCraftMod.MODID);
 
-    public AirfoilWorkbenchBlock(final Properties properties) {
+    public AirfoilWorkbenchBlock(final Block.Properties properties) {
         super(properties);
-        this.setDefaultState(this.stateContainer.getBaseState().with(HORIZONTAL_FACING, Direction.NORTH));
     }
 
-    @Override
-    protected void fillStateContainer(final StateContainer.Builder<Block, BlockState> builder) {
-        super.fillStateContainer(builder);
-        builder.add(HORIZONTAL_FACING);
-    }
+    // @Override
+    // protected void fillStateContainer(final StateContainer.Builder<Block, BlockState> builder) {
+    //     super.fillStateContainer(builder);
+    // }
 
     @Override
     // Unmapped onBlockActivated function
@@ -61,13 +59,6 @@ public class AirfoilWorkbenchBlock extends WideBlock {
     @Override
     public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn,
             BlockPos currentPos, BlockPos facingPos) {
-        // if(facing != null) LOGGER.log(Level.FINE, this.getTranslationKey() +
-        // ".facing:{0}", facing.getName());
-        // LOGGER.log(Level.INFO, this.getTranslationKey() +
-        // ".stateContainerProperties:{0}",
-        // this.getStateContainer().getProperties().toString());
-        // LOGGER.log(Level.FINE, this.getTranslationKey() + ".blockState:{0}",
-        // stateIn.toString());
         return super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
     }
 
