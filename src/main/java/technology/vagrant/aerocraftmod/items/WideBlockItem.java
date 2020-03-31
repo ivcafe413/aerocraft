@@ -12,6 +12,8 @@ import net.minecraft.block.HorizontalBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
+import net.minecraft.util.math.BlockPos;
 import technology.vagrant.aerocraftmod.AeroCraftMod;
 
 public class WideBlockItem extends BlockItem {
@@ -44,12 +46,34 @@ public class WideBlockItem extends BlockItem {
         //if (!this.placeBlock(blockitemusecontext, blockstate))
         //Need to start a check if BOTH blocks can be placed
         //Since this is item placement I just have to check for adjacency
-        blockState = blockState.with(HorizontalBlock.HORIZONTAL_FACING, context.getPlacementHorizontalFacing().getOpposite());
+        Direction placementDirection = context.getPlacementHorizontalFacing().getOpposite();
+        blockState = blockState.with(HorizontalBlock.HORIZONTAL_FACING, placementDirection);
         LOGGER.debug("context placement state facing:{}", blockState.get(HorizontalBlock.HORIZONTAL_FACING));
-        //Facing south, check east-west
-        //Facing north, check west-east
-        //Facing east, check north-south
-        //Facing west, check south-north
+        
+        BlockPos adjPos1;
+        switch(placementDirection) {
+            //Facing east, check north-south
+            case EAST:
+                adjPos1 = context.getPos().offset(Direction.NORTH);
+                break;
+            //Facing west, check south-north
+            case WEST:
+            adjPos1 = context.getPos().offset(Direction.SOUTH);
+                break;
+            //Facing south, check east-west
+            case SOUTH:
+            adjPos1 = context.getPos().offset(Direction.EAST);
+                break;
+            //Facing north, check west-east
+            case NORTH:
+            default:
+                adjPos1 = context.getPos().offset(Direction.WEST);
+                break;
+        }
+        BlockState adjBlockState1 = context.getWorld().getBlockState(adjPos1);
+        if(adjBlockState1.isReplaceable(context)) {
+            
+        }
 
         //Let's only check left and right for a sideways placement
         //adjBlockLeft = context.getWorld().getBlockState(context.getPos().)
