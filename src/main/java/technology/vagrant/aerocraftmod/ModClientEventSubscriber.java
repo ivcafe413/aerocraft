@@ -12,6 +12,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import technology.vagrant.aerocraftmod.gui.AirfoilWorkbenchContainerScreen;
 import technology.vagrant.aerocraftmod.init.ModContainerTypes;
 
+@SuppressWarnings("deprecation")
 @EventBusSubscriber(modid = AeroCraftMod.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModClientEventSubscriber {
     private static final Logger LOGGER = LogManager.getLogger(AeroCraftMod.MODID);

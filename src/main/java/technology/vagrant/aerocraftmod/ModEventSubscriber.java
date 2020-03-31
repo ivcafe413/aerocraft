@@ -3,7 +3,6 @@ package technology.vagrant.aerocraftmod;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.inventory.container.ContainerType;
-import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
