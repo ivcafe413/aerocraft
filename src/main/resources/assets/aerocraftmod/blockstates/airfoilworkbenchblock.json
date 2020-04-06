@@ -1,0 +1,18 @@
+{
+    "multipart": [
+        {
+            "apply": {
+                "model": "aerocraftmod:block/airfoilworkbench"
+            }
+        },
+        {
+            "when": {
+                "facing": "north"
+            },
+            "apply": {
+                "model": "aerocraftmod:block/airfoilworkbench",
+                "y": 180
+            }
+        }
+    ]
+}

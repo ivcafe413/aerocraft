@@ -24,6 +24,8 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import technology.vagrant.aerocraftmod.AeroCraftMod;
+import technology.vagrant.aerocraftmod.blocks.WideBlock;
+import technology.vagrant.aerocraftmod.blocks.WideBlock.WideSide;
 
 public class WideBlockItem extends BlockItem {
     private static final Logger LOGGER = LogManager.getLogger(AeroCraftMod.MODID);
@@ -37,8 +39,7 @@ public class WideBlockItem extends BlockItem {
         // Overriding BlockItem#tryPlace(BlockItemUseContext context)
         // to account for any generic 2-wide block
 
-        // BlockItemUseContext blockItemUseContext =
-        // this.getBlockItemUseContext(context);
+        // BlockItemUseContext blockItemUseContext = this.getBlockItemUseContext(context);
         // I don't think the previous line is necessary, looking at how
         // BlockItem#getBlockItemUseContext is implemented
         // Also we're re-arranging this so that the null-check happens first
@@ -58,8 +59,10 @@ public class WideBlockItem extends BlockItem {
         // Need to start a check if BOTH blocks can be placed
         // Since this is item placement I just have to check for adjacency
         Direction placementDirection = context.getPlacementHorizontalFacing().getOpposite();
-        blockState = blockState.with(HorizontalBlock.HORIZONTAL_FACING, placementDirection);
-        LOGGER.debug("context placement state facing:{}", blockState.get(HorizontalBlock.HORIZONTAL_FACING));
+        blockState = blockState
+            .with(HorizontalBlock.HORIZONTAL_FACING, placementDirection)
+            .with(WideBlock.SIDE, WideSide.LEFT);
+        //LOGGER.debug("context placement state facing:{}", blockState.get(HorizontalBlock.HORIZONTAL_FACING));
 
         BlockPos adjPos1;
         switch (placementDirection) {
@@ -86,7 +89,9 @@ public class WideBlockItem extends BlockItem {
             return ActionResultType.FAIL;
         }
 
-        adjBlockState1 = this.getStateForPlacement(context);
+        adjBlockState1 = this.getStateForPlacement(context)
+            .with(HorizontalBlock.HORIZONTAL_FACING, placementDirection)
+            .with(WideBlock.SIDE, WideSide.RIGHT);
         if (!this.placeBlock(context, adjBlockState1, adjPos1)) {
             return ActionResultType.FAIL;
         }

@@ -1,0 +1,39 @@
+{
+    "textures": {
+        "airfoilworkbench": "aerocraftmod:block/airfoilworkbench"
+    },
+    "elements": [
+        {
+            "from": [2, 8, 2],
+            "to": [16, 12, 14],
+            "faces": {
+                "up": {
+                    "uv": [0, 4, 14, 16],
+                    "texture": "#airfoilworkbench"
+                },
+                "west": {
+                    "uv": [0, 0, 14, 4],
+                    "texture": "#airfoilworkbench"
+                },
+                "north": {
+                    "uv": [0, 0, 14, 4],
+                    "texture": "#airfoilworkbench"
+                },
+                "south": {
+                    "uv": [0, 0, 14, 4],
+                    "texture": "#airfoilworkbench"
+                },
+                "east": {
+                    "uv": [0, 0, 14, 4],
+                    "texture": "#airfoilworkbench",
+                    "cullface": "east"
+                },
+                "down": {
+                    "uv": [0, 4, 14, 16],
+                    "texture": "#airfoilworkbench",
+                    "cullface": "down"
+                }
+            }
+        }
+    ]
+}
